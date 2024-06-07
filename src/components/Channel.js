@@ -54,9 +54,9 @@ const Channel = ({ user = null }) => {
   };
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col h-full w-full">
       <div className="overflow-auto flex-grow">
-        <div className="py-4 max-w-full mx-auto">
+        <div className="py-4 w-full mx-auto">
           <div className="border-b dark:border-gray-600 border-gray-200 py-8 mb-4">
             <div className="font-bold text-3xl text-center">
               <p className="mb-1">Welcome to</p>
@@ -80,10 +80,10 @@ const Channel = ({ user = null }) => {
           <div ref={bottomListRef} />
         </div>
       </div>
-      <div className="mb-6 mx-4">
+      <div className="mb-6 mx-4 w-full">
         <form
           onSubmit={handleOnSubmit}
-          className="flex flex-row bg-gray-200 dark:bg-coolDark-400 rounded-md px-4 py-3 z-10 max-w-screen-lg mx-auto dark:text-white shadow-md"
+          className="flex flex-row mb-6 bg-gray-200 dark:bg-coolDark-400 rounded-md px-4 py-3 z-10 w-full dark:text-white shadow-md"
         >
           <input
             ref={inputRef}

@@ -18,7 +18,6 @@ const firebaseConfig = {
   appId: "1:996014212540:web:71ab2af41a911c982bd7b9"
 };
 
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -36,13 +35,12 @@ function App() {
       }
     });
 
-    // Cleanup subscription
     return () => unsubscribe();
   }, [initializing]);
 
   const signInWithGoogle = async () => {
     const provider = new GoogleAuthProvider();
-    auth.useDeviceLanguage(); // Correct usage here
+    auth.useDeviceLanguage();
     try {
       await signInWithPopup(auth, provider);
     } catch (error) {
@@ -61,20 +59,26 @@ function App() {
   if (initializing) return <Loader />;
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gray-100 dark:bg-coolDark-500">
+    <div className="flex flex-col items-center justify-center h-screen w-full bg-gray-100 dark:bg-coolDark-500">
       <header className="py-8">
         <img src={logo} alt="Logo" className="w-32 h-auto" />
       </header>
-      <div className="bg-white dark:bg-coolDark-600 rounded-md shadow-md p-8">
+      <div className="bg-white mb-6 dark:bg-coolDark-600 rounded-md shadow-md p-8 w-full max-w-screen-lg mx-auto" style={{ overflow: 'hidden' }}>
         {user ? (
           <>
-            <Button onClick={signOut}  className="mb-4 bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white py-2 px-4 rounded-md shadow-md focus:outline-none focus:ring focus:ring-purple-400 transition-all">
-              Sign Out
-            </Button>
+            <div className="flex justify-center  mb-8 bg-gradient-to-r from-green-400 to-blue-500 hover:from-green-500 hover:to-blue-600 text-white py-3 px-6 rounded-full shadow-lg transform transition-transform hover:scale-105">
+              <Button onClick={signOut}>
+                Sign Out
+              </Button>
+            </div>
             <Channel user={user} db={db} />
           </>
         ) : (
-          <Button onClick={signInWithGoogle}>Sign in with Google</Button>
+          <div className="flex justify-center bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white py-3 px-6 rounded-full shadow-lg transform transition-transform hover:scale-105">
+            <Button onClick={signInWithGoogle}>
+              Sign in with Google
+            </Button>
+          </div>
         )}
       </div>
     </div>
