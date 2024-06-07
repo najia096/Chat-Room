@@ -1,6 +1,6 @@
 # Najia's Chat Room
 
-![Chat Room Demo](https://your-gif-link-here.com/chat-room-demo.gif)
+![Chat Room Demo](https://your-gif-link-here.com/chat-room.gif)
 
 ## Overview
 
