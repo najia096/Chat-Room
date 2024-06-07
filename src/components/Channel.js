@@ -23,7 +23,11 @@ const Channel = ({ user = null }) => {
     if (inputRef.current) {
       inputRef.current.focus();
     }
-  }, [inputRef]);
+    if (user) {
+      const joinMessage = `${user.displayName} has joined the chat!`;
+      addMessage(joinMessage);
+    }
+  }, [user]);
 
   const handleOnChange = e => {
     setNewMessage(e.target.value);
@@ -50,6 +54,18 @@ const Channel = ({ user = null }) => {
       } catch (error) {
         console.error('Error adding message: ', error);
       }
+    }
+  };
+
+  const addMessage = async (text) => {
+    try {
+      // Add new message in Firestore
+      await addDoc(messagesRef, {
+        text,
+        createdAt: serverTimestamp(),
+      });
+    } catch (error) {
+      console.error('Error adding message: ', error);
     }
   };
 
