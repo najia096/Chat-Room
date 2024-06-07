@@ -10,13 +10,14 @@ import logo from './chat-logo.png';
 
 // Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCZJ2FWxR-rpqPGkZjopmTu54dfVDJW1QY",
-  authDomain: "react-firechat-3e463.firebaseapp.com",
-  projectId: "react-firechat-3e463",
-  storageBucket: "react-firechat-3e463.appspot.com",
-  messagingSenderId: "996014212540",
-  appId: "1:996014212540:web:71ab2af41a911c982bd7b9"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID
 };
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
