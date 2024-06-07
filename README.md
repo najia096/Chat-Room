@@ -13,11 +13,6 @@ Najia's Chat Room is a real-time chat application built using React and Firebase
 - **Responsive Design:** User-friendly interface that adapts to various screen sizes.
 - **Tailwind CSS:** Styled with Tailwind CSS for a modern look and feel.
 
-## Screenshots
-
-![Screenshot 1](https://your-screenshot-link-here.com/screenshot1.png)
-![Screenshot 2](https://your-screenshot-link-here.com/screenshot2.png)
-
 ## Getting Started
 
 To get a local copy up and running, follow these simple steps.
